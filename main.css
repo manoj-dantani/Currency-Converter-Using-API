@@ -24,4 +24,144 @@ body{
     border: 2px solid white;
     border-radius: 20px;
     filter: drop-shadow(5px 10px 20px);
+    display: flex;
  }
+
+ .amount-countainer{
+   display: flex;
+
+ }
+
+ h2{
+   position: absolute;
+   left: 80px;
+ }
+
+ #amtlbl{
+   padding: 80px 0px 0px 30px;
+   font-size: 20px;
+   font-weight: 700;
+ }
+
+ #amtval{
+   position: relative;
+   top: 77px;
+   left: 5px;
+   height: 25px;
+   border-radius: 5px;
+   border: 1px solid black;
+ }
+
+ #amtval:hover{
+   border: 2px solid #CA9CE1;
+ }
+
+ .country1{
+   position: absolute;
+   justify-content: center;
+   height: 100px;
+   width: 100px;
+   margin-top: 140px;
+   margin-left: 30px;
+ }
+
+.country1 p{
+   position: relative;
+   font-size: 20px;
+   font-weight: 700;
+   left: 25px;
+   bottom: 10px;
+}
+
+.country1 img{
+   position: absolute;
+   bottom: 15px;
+   height: 50px;
+}
+
+.country1 select{
+   position: absolute;
+   top: 50px;
+   left: 50px;
+   background-color: #BFD8BD;
+   height: 25px;
+   width:  50px;
+   border: none;
+}
+
+.country2{
+   position: absolute;
+   display: flex;
+   height: 100px;
+   width: 100px;
+   margin-top: 140px;
+   margin-left: 230px;
+ }
+
+ .country2 p{
+   position: relative;
+   left: 35px;
+   bottom: 10px;
+   font-weight: 700;
+   font-size: 20px;
+}
+
+.country2 img{
+   position: absolute;
+   bottom: 15px;
+   height: 50px;
+}
+
+.country2 select{
+   position: absolute;
+   top: 50px;
+   left: 50px;
+   background-color: #BFD8BD;
+   height: 25px;
+   width:  50px;
+   border: none;
+
+}
+
+i{
+   position: absolute;
+   top: 190px;
+   left: 170px;
+}
+
+.result-container{
+   display: flex;
+   align-items: flex-end;
+   position: absolute;
+   height: 290px;
+   width: 100%;
+}
+
+.result-container p{
+   position: relative;
+   top: 10px;
+   left: 30px;
+}
+
+.btn-container{
+   display: flex;
+   align-items: flex-end;
+   justify-content: left;
+   position: absolute;
+   margin-top: 19rem;
+   margin-left: 7rem;
+}
+
+button{
+   height: 35px;
+   border: none;
+   border-radius: 7px;
+   cursor: pointer;
+   background-color: #F3E0EC;
+   font-weight: 600;
+   font-size: 15px;
+}
+
+button:hover{
+   border: 2px solid black;
+}
