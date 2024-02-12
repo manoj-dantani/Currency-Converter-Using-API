@@ -1,0 +1,27 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+
+ marquee{
+    font-size: 20px;
+    font-weight: 700;
+ }
+
+ .container{
+    background-color: #D8E2DC;
+    height: 600px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+ }
+
+ .content{
+    height: 350px;
+    width: 350px;
+    background-color: #BFD8BD;
+    border: 2px solid white;
+    border-radius: 20px;
+    filter: drop-shadow(5px 10px 20px);
+ }
