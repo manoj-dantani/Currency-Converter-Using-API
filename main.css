@@ -21,7 +21,7 @@ body{
     height: 350px;
     width: 350px;
     background-color: #BFD8BD;
-    border: 2px solid white;
+    border: 1px solid white;
     border-radius: 20px;
     filter: drop-shadow(5px 10px 20px);
     display: flex;
@@ -50,6 +50,7 @@ body{
    height: 25px;
    border-radius: 5px;
    border: 1px solid black;
+   z-index: 1;
  }
 
  #amtval:hover{
@@ -58,7 +59,6 @@ body{
 
  .country1{
    position: absolute;
-   justify-content: center;
    height: 100px;
    width: 100px;
    margin-top: 140px;
@@ -71,7 +71,7 @@ body{
    font-weight: 700;
    left: 25px;
    bottom: 10px;
-}
+ } 
 
 .country1 img{
    position: absolute;
@@ -81,12 +81,16 @@ body{
 
 .country1 select{
    position: absolute;
+   display: flex;
+   justify-content: center;
+   align-items: center;
    top: 50px;
    left: 50px;
    background-color: #BFD8BD;
    height: 25px;
    width:  50px;
    border: none;
+   z-index: 1;
 }
 
 .country2{
@@ -120,7 +124,7 @@ body{
    height: 25px;
    width:  50px;
    border: none;
-
+   z-index: 1;
 }
 
 i{
@@ -163,5 +167,5 @@ button{
 }
 
 button:hover{
-   border: 2px solid black;
+   border: 1px solid black;
 }
