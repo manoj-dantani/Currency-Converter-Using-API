@@ -46,7 +46,7 @@ const getData = async () => {
     let response = await fetch(URL);
     let data = await response.json();
     let rate = data[fromCurrency.value.toLowerCase()][toCurrency.value.toLowerCase()];
-    result.innerText = `${amtVal.value} ${fromCurrency.value} = ${rate.toFixed(2)*amtVal.value} ${toCurrency.value} as ${data.date}`;
+    result.innerText = `${amtVal.value} ${fromCurrency.value} = ${rate.toFixed(2)*amtVal.value} ${toCurrency.value} as on ${data.date}`;
 };
 
 btngetRate.addEventListener("click",getData);
