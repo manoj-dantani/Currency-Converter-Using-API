@@ -1,5 +1,5 @@
 
-const BASEURL = "https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/latest/currencies";
+const BASEURL = "https://latest.currency-api.pages.dev/v1/currencies";
 
 let amtVal = document.querySelector("input");
 let dropdownVal = document.querySelectorAll("select");
@@ -10,7 +10,7 @@ let btngetRate = document.querySelector("button");
 result.style.fontSize = "17px";
 result.style.fontWeight = "700"; 
 
-amtVal.value = 1;
+amtVal.value = 100;
 
 for(let option of dropdownVal){
     for(let currencyCode in countryList){
@@ -26,6 +26,7 @@ for(let option of dropdownVal){
     }
     option.addEventListener("change", (evt) => {
         updateFlag(evt.target);
+        getData(evt.target);
     });
 }
 
@@ -41,11 +42,12 @@ const getData = async () => {
         amtVal.value = 1;
     }
 
-    let URL = `${BASEURL}/${fromCurrency.value.toLowerCase()}/${toCurrency.value.toLowerCase()}.json`;
+    let URL = `${BASEURL}/${fromCurrency.value.toLowerCase()}.json`;
     let response = await fetch(URL);
     let data = await response.json();
-    let rate = data[toCurrency.value.toLowerCase()];
+    let rate = data[fromCurrency.value.toLowerCase()][toCurrency.value.toLowerCase()];
     result.innerText = `${amtVal.value} ${fromCurrency.value} = ${rate.toFixed(2)*amtVal.value} ${toCurrency.value} as ${data.date}`;
 };
 
 btngetRate.addEventListener("click",getData);
+window.addEventListener("load",getData);

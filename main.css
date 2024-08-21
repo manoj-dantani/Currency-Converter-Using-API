@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Pacifico&display=swap');
+
 body{
     margin: 0;
     padding: 0;
@@ -35,12 +37,14 @@ body{
  h2{
    position: absolute;
    left: 80px;
+   font-family: Pacifico, sans-serif;
  }
 
  #amtlbl{
    padding: 80px 0px 0px 30px;
    font-size: 20px;
    font-weight: 700;
+   font-family: Nunito, sans-serif;
  }
 
  #amtval{
@@ -71,6 +75,7 @@ body{
    font-weight: 700;
    left: 25px;
    bottom: 10px;
+   font-family: Nunito, sans-serif;
  } 
 
 .country1 img{
@@ -108,6 +113,7 @@ body{
    bottom: 10px;
    font-weight: 700;
    font-size: 20px;
+   font-family: Nunito, sans-serif;
 }
 
 .country2 img{
@@ -145,6 +151,7 @@ i{
    position: relative;
    top: 10px;
    left: 30px;
+   font-family: Nunito, sans-serif;
 }
 
 .btn-container{
@@ -157,13 +164,14 @@ i{
 }
 
 button{
-   height: 35px;
+   height: 40px;
    border: none;
-   border-radius: 7px;
+   border-radius: 10px;
    cursor: pointer;
    background-color: #F3E0EC;
    font-weight: 600;
    font-size: 15px;
+   padding: 11px;
 }
 
 button:hover{
