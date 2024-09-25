@@ -1,179 +1,119 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Pacifico&display=swap');
 
-body{
+body {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
- marquee{
-    font-size: 20px;
-    font-weight: 700;
- }
+marquee {
+    font-size: 30px;
+}
 
- .container{
+.container {
+    height: 800px;
     background-color: #D8E2DC;
-    height: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.content {
+    background-color: #BFD8BD;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    filter: drop-shadow(5px 10px 20px);
+    height: 520px;
+    width: 500px;
+    border-radius: 20px;
+    margin: 0 0 100px;
+    padding: 10px;
+}
+
+.content>h2 {
+    font-size: 35px;
+    font-family: Pacifico, sans-serif;
+}
+
+.countryContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     width: 100%;
+    margin: 20px 0 0;
+}
+
+
+
+.amtContainer label{
+    font-size: 23px;
+    font-family: Nunito, sans-serif;
+}
+
+.amtContainer input {
+    height: 25px;
+    width: 200px;
+    border-radius: 7px;
+    margin-left: 10px;
+}
+
+.country {
+    display: flex;
+    flex-direction: column;
+}
+
+.country p{
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    font-family: Nunito, sans-serif;
+}
+
+.imgContainer {
     display: flex;
     justify-content: center;
     align-items: center;
- }
-
- .content{
-    height: 350px;
-    width: 350px;
-    background-color: #BFD8BD;
-    border: 1px solid white;
-    border-radius: 20px;
-    filter: drop-shadow(5px 10px 20px);
-    display: flex;
- }
-
- .amount-countainer{
-   display: flex;
-
- }
-
- h2{
-   position: absolute;
-   left: 80px;
-   font-family: Pacifico, sans-serif;
- }
-
- #amtlbl{
-   padding: 80px 0px 0px 30px;
-   font-size: 20px;
-   font-weight: 700;
-   font-family: Nunito, sans-serif;
- }
-
- #amtval{
-   position: relative;
-   top: 77px;
-   left: 5px;
-   height: 25px;
-   border-radius: 5px;
-   border: 1px solid black;
-   z-index: 1;
- }
-
- #amtval:hover{
-   border: 2px solid #CA9CE1;
- }
-
- .country1{
-   position: absolute;
-   height: 100px;
-   width: 100px;
-   margin-top: 140px;
-   margin-left: 30px;
- }
-
-.country1 p{
-   position: relative;
-   font-size: 20px;
-   font-weight: 700;
-   left: 25px;
-   bottom: 10px;
-   font-family: Nunito, sans-serif;
- } 
-
-.country1 img{
-   position: absolute;
-   bottom: 15px;
-   height: 50px;
+    margin: 0 0 25px;
 }
 
-.country1 select{
-   position: absolute;
-   display: flex;
-   justify-content: center;
-   align-items: center;
-   top: 50px;
-   left: 50px;
-   background-color: #BFD8BD;
-   height: 25px;
-   width:  50px;
-   border: none;
-   z-index: 1;
+.imgContainer img {
+    height: 45px;
+    width: 45px;
+}   
+
+.imgContainer select {
+    height: 30px;
+    width: 170px;
 }
 
-.country2{
-   position: absolute;
-   display: flex;
-   height: 100px;
-   width: 100px;
-   margin-top: 140px;
-   margin-left: 230px;
- }
-
- .country2 p{
-   position: relative;
-   left: 35px;
-   bottom: 10px;
-   font-weight: 700;
-   font-size: 20px;
-   font-family: Nunito, sans-serif;
+.exchangeIcon {
+    font-size: 25px;
+    margin: 50px 0 0;
+    cursor: not-allowed;
 }
 
-.country2 img{
-   position: absolute;
-   bottom: 15px;
-   height: 50px;
+
+.result-container p {
+    font-family: Nunito, sans-serif;
+    font-size: 17px;
+    font-weight: 500;
 }
 
-.country2 select{
-   position: absolute;
-   top: 50px;
-   left: 50px;
-   background-color: #BFD8BD;
-   height: 25px;
-   width:  50px;
-   border: none;
-   z-index: 1;
+.result-container h2,h3 {
+    font-family: Nunito, sans-serif;
+    margin-top: 0;
 }
 
-i{
-   position: absolute;
-   top: 190px;
-   left: 170px;
+.btnGetRate {
+    height: 40px;
+    width: 200px;
+    border-radius: 8px;
+    font-size: 23px;
+    border: none;
+    font-family: Nunito, sans-serif;
+    filter: drop-shadow(5px 5px 5px);
 }
 
-.result-container{
-   display: flex;
-   align-items: flex-end;
-   position: absolute;
-   height: 290px;
-   width: 100%;
-}
-
-.result-container p{
-   position: relative;
-   top: 10px;
-   left: 30px;
-   font-family: Nunito, sans-serif;
-}
-
-.btn-container{
-   display: flex;
-   align-items: flex-end;
-   justify-content: left;
-   position: absolute;
-   margin-top: 19rem;
-   margin-left: 7rem;
-}
-
-button{
-   height: 40px;
-   border: none;
-   border-radius: 10px;
-   cursor: pointer;
-   background-color: #F3E0EC;
-   font-weight: 600;
-   font-size: 15px;
-   padding: 11px;
-}
-
-button:hover{
-   border: 1px solid black;
-}

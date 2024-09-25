@@ -4,18 +4,19 @@ const BASEURL = "https://latest.currency-api.pages.dev/v1/currencies";
 let amtVal = document.querySelector("input");
 let dropdownVal = document.querySelectorAll("select");
 let result = document.querySelector(".result-container p");
-let fromCurrency = document.querySelector(".country1 select");
-let toCurrency = document.querySelector(".country2 select");
+let fromCurrency = document.getElementById("from");
+let toCurrency = document.getElementById("to");
 let btngetRate = document.querySelector("button");
-result.style.fontSize = "17px";
-result.style.fontWeight = "700"; 
+let option = document.querySelector("option");
+let exchangeCountry = document.querySelector(".exchangeIcon");
 
-amtVal.value = 100;
+
+amtVal.style.fontSize = "20px";
 
 for(let option of dropdownVal){
-    for(let currencyCode in countryList){
+    for(let currencyCode in countryCodeName){
         let newOption = document.createElement("option");
-        newOption.innerText = currencyCode;
+        newOption.innerText = `${currencyCode} - ${countryCodeName[currencyCode]}`;
         newOption.value = currencyCode;
         if(option.name === "from" && currencyCode === "CAD"){
             newOption.selected = "selected";
@@ -23,6 +24,7 @@ for(let option of dropdownVal){
             newOption.selected = "selected";
         }
         option.append(newOption);
+
     }
     option.addEventListener("change", (evt) => {
         updateFlag(evt.target);
@@ -30,24 +32,48 @@ for(let option of dropdownVal){
     });
 }
 
+
+let currSymbols = currencySymbols[fromCurrency.value];
+amtVal.value = `${currSymbols} 100`;
+
+
 const updateFlag = (element) => {
     let currencyCode = element.value;
     let countryCode = countryList[currencyCode];
     let imgSrc = element.parentElement.querySelector("img");
-    imgSrc.src = `https://flagsapi.com/${countryCode}/shiny/64.png`;
+    imgSrc.src = `https://flagsapi.com/${countryCode}/shiny/64.png`;    
 };
 
-const getData = async () => {
-    if(amtVal.value === "" || amtVal.value < 1){
-        amtVal.value = 1;
-    }
 
+const getData = async () => {
+
+    let numericValue;
+    
+    if(amtVal.value){
+        numericValue = parseFloat(amtVal.value.replace(/[^\d.-]/g, ''));
+    }
+    else{
+        amtVal.value = `${currSymbols} 100`;
+        
+        let currSymbols = currencySymbols[fromCurrency.value];
+        numericValue = parseFloat(amtVal.value.replace(/[^\d.-]/g, ''));     
+    }
+    
     let URL = `${BASEURL}/${fromCurrency.value.toLowerCase()}.json`;
     let response = await fetch(URL);
     let data = await response.json();
     let rate = data[fromCurrency.value.toLowerCase()][toCurrency.value.toLowerCase()];
-    result.innerText = `${amtVal.value} ${fromCurrency.value} = ${rate.toFixed(2)*amtVal.value} ${toCurrency.value} as on ${data.date}`;
+    let convertedRate = rate.toFixed(2)*numericValue;
+    
+    let currencyValue = document.querySelector(".result-container h3");
+    let convertedValue = document.querySelector(".result-container h2");
+    currencyValue.innerText = `${numericValue} ${fromCurrency.value} =`;
+    convertedValue.innerText = `${convertedRate.toFixed(2)} ${countryCodeName[toCurrency.value]}'s`;
+    
+    result.innerText = `${numericValue} ${fromCurrency.value} = ${convertedRate.toFixed(2)} ${toCurrency.value} as on ${data.date}`;     
+    
 };
 
-btngetRate.addEventListener("click",getData);
-window.addEventListener("load",getData);
+btngetRate.addEventListener("click", getData);
+exchangeCountry.addEventListener("click", getData);
+window.addEventListener("load", getData);
